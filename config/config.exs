@@ -29,8 +29,8 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 #
-config :todo_with_ecto, ecto_repos: [Todo.Repo]
-config :todo_with_ecto, Todo.Repo,
+config :todo_with_ecto, ecto_repos: [Repo.Todo]
+config :todo_with_ecto, Repo.Todo,
   adapter: Ecto.Adapters.MySQL,
   database: "ecto_tasks",
   username: "makingdevs",

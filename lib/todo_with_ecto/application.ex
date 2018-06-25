@@ -11,7 +11,7 @@ defmodule TodoWithEcto.Application do
     children = [
       # Starts a worker by calling: TodoWithEcto.Worker.start_link(arg)
       # {TodoWithEcto.Worker, arg},
-      supervisor(Todo.Repo, [])
+      supervisor(Repo.Todo, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
