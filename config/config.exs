@@ -28,3 +28,12 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+#
+config :todo_with_ecto, ecto_repos: [Todo.Repo]
+config :todo_with_ecto, Todo.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  database: "ecto_tasks",
+  username: "makingdevs",
+  password: "makingdevs",
+  hostname: "localhost",
+  pool_size: 10
