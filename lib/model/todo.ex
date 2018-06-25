@@ -7,6 +7,7 @@ defmodule Todo do
   schema "tasks" do
     field :description, :string
     field :status, :boolean
+    belongs_to :user_story, UserStory
   end
 
   def changeset(task, params \\ %{}) do
