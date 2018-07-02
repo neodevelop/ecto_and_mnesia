@@ -31,9 +31,4 @@ use Mix.Config
 #
 config :todo_with_ecto, ecto_repos: [Repo.Todo]
 config :todo_with_ecto, Repo.Todo,
-  adapter: Ecto.Adapters.MySQL,
-  database: "ecto_tasks",
-  username: "makingdevs",
-  password: "makingdevs",
-  hostname: "localhost",
-  pool_size: 10
+  adapter: EctoMnesia.Adapter

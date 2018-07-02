@@ -22,8 +22,8 @@ defmodule TodoWithEcto.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:mariaex, "~> 0.8.2"},
-      {:ecto, "~> 2.1"}
+      {:ecto_mnesia, "0.9.1"},
+      {:ecto, "2.1.6"}
     ]
   end
 end
