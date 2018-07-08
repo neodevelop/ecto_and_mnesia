@@ -1,20 +1,12 @@
 defmodule Todo.Router do
   use Plug.Router
 
-  plug Plug.Logger
-  plug :match
-  plug :dispatch
-  plug Plug.RequestId
-  # plug Plug.Session
+  plug(:match)
+  plug(:dispatch)
 
-  get "/hello" do
-    send_resp(conn, 200, "world")
-  end
+  get("/", do: send_resp(conn, 200, "Welcome"))
+  forward("/users", to: Todo.UsersRouter)
+  match(_, do: send_resp(conn, 404, "Oops!"))
 
-  # forward "/users", to: UsersRouter
-
-  match _ do
-    send_resp(conn, 404, "oops")
-  end
 
 end
