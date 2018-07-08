@@ -23,7 +23,9 @@ defmodule TodoWithEcto.MixProject do
   defp deps do
     [
       {:ecto_mnesia, "0.9.1"},
-      {:ecto, "2.1.6"}
+      {:ecto, "2.1.6"},
+      {:cowboy, "~> 2.0"},
+      {:plug, "~> 1.0"}
     ]
   end
 end
