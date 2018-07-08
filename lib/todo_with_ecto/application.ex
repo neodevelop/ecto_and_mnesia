@@ -12,7 +12,7 @@ defmodule TodoWithEcto.Application do
     children = [
       # Starts a worker by calling: TodoWithEcto.Worker.start_link(arg)
       # {TodoWithEcto.Worker, arg},
-      Cowboy2.child_spec(scheme: :http, plug: Todo.Plug, options: [port: 4444]),
+      Cowboy2.child_spec(scheme: :http, plug: Todo.Router, options: [port: 4444]),
       supervisor(Repo.Todo, [])
     ]
 
