@@ -3,6 +3,7 @@ defmodule TodoWithEcto.Application do
   # for more information on OTP Applications
   @moduledoc false
 
+  alias Plug.Adapters.Cowboy2
   use Application
 
   def start(_type, _args) do
@@ -11,6 +12,7 @@ defmodule TodoWithEcto.Application do
     children = [
       # Starts a worker by calling: TodoWithEcto.Worker.start_link(arg)
       # {TodoWithEcto.Worker, arg},
+      Cowboy2.child_spec(scheme: :http, plug: Todo.Plug, options: [port: 4444]),
       supervisor(Repo.Todo, [])
     ]
 
